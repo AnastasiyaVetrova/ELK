@@ -26,12 +26,12 @@
 - *logstash.conf* - для настройки, фильтрации и отправки в Elasticsearch
    
 ## ✨ Рекомендую посмотреть другие проекты:
-1. Rest - основа всего
-2. SLF4J
-3. Kafka
-4. Starter
-5. Kubernetes
-6. Mongo(в работе)
+1. [Rest - основа всего](https://github.com/AnastasiyaVetrova/Rest)
+2. [SLF4J](https://github.com/AnastasiyaVetrova/SLF4J)
+3. [Kafka](https://github.com/AnastasiyaVetrova/Kafka)
+4. [Starter](https://github.com/AnastasiyaVetrova/Starter)
+5. [Kubernetes](https://github.com/AnastasiyaVetrova/Kubernetes)
+6. [Mongo(в работе)](https://github.com/AnastasiyaVetrova/Mongo)
 
 ## 🤝 Контакты
 Если у вас есть вопросы или предложения, вы можете связаться со мной:
