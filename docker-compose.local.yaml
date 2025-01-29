@@ -1,0 +1,37 @@
+services:
+  db:
+    ports:
+      - "5432:5432"
+    image: postgres:latest
+    container_name: puppet-local-db
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - a-tink-test
+    restart: no
+
+  app:
+    image: puppet-app-elk:latest
+    container_name: puppet-app
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${DB_NAME}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      LOG_PATH: /logs
+      SPRING_PROFILES_ACTIVE: local
+    depends_on:
+      - db
+    networks:
+      - a-tink-test
+    restart: no
+    volumes:
+      - ${LOG_PATH}:/logs
+
+networks:
+  a-tink-test:
+    external: false
+    driver: bridge
